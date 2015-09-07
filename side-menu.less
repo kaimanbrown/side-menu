@@ -1,0 +1,139 @@
+nav{
+	&.side-nav{
+		position: fixed;
+		right: 0px;
+		top: 50%;
+		z-index: 1;
+		background: #fff;
+		border-top: 1px solid #949494;
+		border-bottom: 1px solid #949494;
+		border-left: 1px solid #949494;
+		.translateY(-50%);
+		.border-top-left-radius (5px);
+		.border-bottom-left-radius (5px); 
+		ul{
+			margin: 10px 0;
+			list-style: none;
+			position: relative;
+			li{
+				position: relative;
+				font-weight: 600;
+				text-align: right;
+				width: 34px;
+				height: 22px;
+				margin-bottom: 8px;
+				font-weight: 600;
+				font-size: 13px;
+				z-index: 2;
+				span{
+					position: absolute;
+					cursor: pointer;
+					padding: 4px 16px 0;	
+					height: 100%;
+					background: #000;
+					color: #fff;
+					right: 100%;
+					z-index: -1;
+					white-space: nowrap;
+					.border-top-left-radius (10%, 50%);
+					.border-bottom-left-radius (10%, 50%);
+					.transition(all ease 0.25s);
+				}
+				a{
+					font-size: 11px;
+					color: #fff;
+					z-index: -2;
+					font-weight: 600;
+					height: 100%;
+					width: 100%;
+				}
+				&::before{
+					position: absolute;
+					content: '';
+					height: 100%;
+					width: 100%;
+					z-index: 2;
+					left: 0;
+					background: #fff;
+				}
+
+				&::after{	
+					.transition(all ease 0.25s);				
+					cursor: pointer;
+					position: absolute;
+					display: inline-block;
+					content: ' ';
+					right: 10px;
+					top: 50%;
+					width: 10px;
+					height: 10px;
+					margin-left: 10px;			
+					z-index: 2;
+					background: #d6d6d6;
+					.translateY(-50%);
+					.border-radius(50%);
+				}
+				&.active{
+					span{						
+						right: 100%;
+					}
+					&:after{
+						width: 14px;
+						height: 14px;
+						right: 8px;
+						margin-left: 0px;
+						border: 1px solid @primary-colour;
+					}
+				}
+				&:hover, &:focus,
+				&:active{
+					span{						
+						right: 100%;
+					}
+					&:after{
+						width: 14px;
+						height: 14px;
+						right: 8px;
+						border: 1px solid rgba(0,0,0,0.2);
+						
+					}
+				}
+				&:nth-of-type(5n+1){
+					&:hover{
+						&:after{
+							background: @primary-colour;
+						}
+					}
+				}
+				&:nth-of-type(5n+2){
+					&:hover{
+						&:after{
+							background: @secondary-colour;
+						}
+					}
+				}
+				&:nth-of-type(5n+3){
+					&:hover{
+						&:after{
+							background: @third-colour;
+						}
+					}
+				}
+				&:nth-of-type(5n+4){
+					&:hover{
+						&:after{
+							background: @fourth-colour;
+						}
+					}
+				}
+				&:nth-of-type(5n+5){
+					&:hover{
+						&:after{
+							background: @fifth-colour;
+						}
+					}
+				}
+			}
+		}
+	}
+}
